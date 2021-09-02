@@ -9,7 +9,27 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="canvas-container"></div>
+  <script>
+    // 1260 880 560
+    switch (true) {
+      case window.innerWidth >= 1260:
+        document.getElementById('canvas-container').innerHTML = '<canvas id="viewport" width="1280px" height="629px"></canvas>' + document.getElementById('canvas-container').innerHTML;
+        break;
+      case window.innerWidth >= 880:
+        document.getElementById('canvas-container').innerHTML = '<canvas id="viewport" width="780px" height="429px"></canvas>' + document.getElementById('canvas-container').innerHTML;
+        break;
+      case window.innerWidth >= 560:
+        document.getElementById('canvas-container').innerHTML = '<canvas id="viewport" width="480px" height="310px"></canvas>' + document.getElementById('canvas-container').innerHTML;
+        break;
+      case window.innerWidth < 560:
+
+        document.getElementById('canvas-container').innerHTML = `<h3 class="screenSizeMessage">Game available only for window sizes >560 and only for desktop browsers</h3>`;
+        break;
+      default:
+        break;
+    }
+  </script>
 
 </body>
 
